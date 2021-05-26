@@ -10,8 +10,8 @@ cursor = myDB.cursor()
 createQuery = "CREATE DATABASE BeerRatings"
 
 def writeDataToDB(myDB):
-    query = "INSERT INTO BeerList(Beer Name, Beer Type, Rating)" \
-            "VALUES (Puddin' Pop, Stout, 10)"
+    query = ("INSERT INTO BeerList (Beer Name, Beer Type, Rating) "
+            "VALUES (Puddin' Pop, Stout, 10)")
 
     cursor = myDB.cursor()
     cursor.execute(query)
@@ -30,6 +30,16 @@ def createTableInDB(tableName):
     cursor.execute(query)
     myDB.commit()
 
+def addColumnToTable(table, columnName):
+    query = "ALTER TABLE " + table + " ADD " + columnName
+    cursor.execute(query)
+    myDB.commit()
+
+def removeColumnFromTable(table, columnName):
+    query = "ALTER TABLE " + table + " ADD " + columnName
+    cursor.execute(query)
+    myDB.commit()
+
 # used to select/switch between databases
 def useDatabase(DB):
     query = "USE " + DB
@@ -44,6 +54,9 @@ def wrapUp():
 
 if __name__=="__main__":
     useDatabase("BeerRatings")
+    addColumnToTable("BeerRatings", "Beer Name")
+    addColumnToTable("BeerRatings", "Beer Type")
+    addColumnToTable("BeerRatings", "Rating")
     writeDataToDB(myDB)
     readDataFromDB(myDB)
     wrapUp()
