@@ -10,6 +10,13 @@
             "request": "launch",
             "program": "Main.py",
             "console": "integratedTerminal"
+        },
+        {
+            "name": "Graph",
+            "type": "python",
+            "request": "launch",
+            "program": "Graph.py",
+            "console": "integratedTerminal"
         }
     ]
 }

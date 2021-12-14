@@ -1,2 +1,6 @@
 # Custom Dictionary Words
 boto
+pyplot
+tolist
+xticklabels
+Zwickle
