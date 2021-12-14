@@ -1,4 +1,6 @@
 host = 'beezrratings.ckuwkrdbu3fr.us-east-1.rds.amazonaws.com'
 user = 'admin'
 password = '109NSSquare'
+port = '3306'
+region = 'us-east-1d'
 db_name = 'BeeZrRatings'

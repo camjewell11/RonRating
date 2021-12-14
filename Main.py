@@ -2,11 +2,19 @@ import mysql.connector
 import pandas as pd
 import config
 
+import boto3
+
 # initialize database connection
+session = boto3.Session(profile_name='default')
+client = session.client('rds')
+token = client.generate_db_auth_token(DBHostname=config.host, Port=config.port, DBUsername=config.user, Region=config.region)
+
 myDB = mysql.connector.connect(
     host = config.host,
     user = config.user,
-    password = config.password)
+    password = config.password,
+    port = config.port,
+    database = config.db_name)
 cursor = myDB.cursor()
 
 createQuery = "CREATE DATABASE BeerRatings"
