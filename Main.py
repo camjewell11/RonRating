@@ -1,13 +1,18 @@
 import mysql.connector
+import pandas as pd
+import config
 
 # initialize database connection
 myDB = mysql.connector.connect(
-    host = "beezrbeerratings.c6r8l4machqa.us-east-2.rds.amazonaws.com",
-    user = "admin",
-    password = "109NSSquare")
+    host = config.host,
+    user = config.user,
+    password = config.password)
 cursor = myDB.cursor()
 
 createQuery = "CREATE DATABASE BeerRatings"
+
+def readConfig():
+    df = pd.read_csv('')
 
 def writeDataToDB(myDB):
     query = ("INSERT INTO BeerList (Beer Name, Beer Type, Rating) "
