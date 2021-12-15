@@ -1,6 +1,24 @@
 # Custom Dictionary Words
+Barleywine
+Beerbo
 boto
+Candi
+Danktification
+Dopplebock
+hlines
+Huntschill
+Insano
+Kickboxer
+Krisp
+Palante
+Puddin
 pyplot
+rlabel
+Rootshoot
+Sauvignon
+Sesh
 tolist
+Tripel
 xticklabels
+ylim
 Zwickle

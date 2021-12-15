@@ -1,0 +1,110 @@
+{
+    "Krisp Kringle\nWinter Lager": {
+        "plot_color": "#05ACE5",
+        "type": "lager"
+    },
+    "Rootshoot Craft Lager": {
+        "plot_color": "#5E4626",
+        "type": "lager"
+    },
+    "Sanity Czech": {
+        "plot_color": "#E3C80F",
+        "type": "lager"
+    },
+    "Deception Dark Lager": {
+        "plot_color": "#251C0C",
+        "type": "lager"
+    },
+    "Intimidator Dopplebock": {
+        "plot_color": "#946A1D",
+        "type": "lager"
+    },
+    "Kickboxer American Red Ale": {
+        "plot_color": "#CE2E14",
+        "type": "ale"
+    },
+    "Moonshot Coffee Stout": {
+        "plot_color": "#251310",
+        "type": "stout"
+    },
+    "Strata Crusher": {
+        "plot_color": "#81D71C",
+        "type": "ipa"
+    },
+    "Hash in the Mash": {
+        "plot_color": "#A8D71C",
+        "type": "ipa"
+    },
+    "Fresh Sesh Pale Ale": {
+        "plot_color": "#33DBE0",
+        "type": "ipa"
+    },
+    "Huntschill Cold IPA": {
+        "plot_color": "#0AEBF2",
+        "type": "ipa"
+    },
+    "Danktification Brett IPA": {
+        "plot_color": "#2C8B32",
+        "type": "ipa"
+    },
+    "Brett Pale Ale": {
+        "plot_color": "#208241",
+        "type": "other"
+    },
+    "Imperial Brett IPA": {
+        "plot_color": "#208260",
+        "type": "ipa"
+    },
+    "Captain Insano": {
+        "plot_color": "#BA7410",
+        "type": "other"
+    },
+    "French Calvados Apple\nBrandy BA Belgian\nDark Strong": {
+        "plot_color": "#32EB0B",
+        "type": "other"
+    },
+    "Cabernet Sauvignon Aged\nCandi Belgian Tripel": {
+        "plot_color": "#9B1349",
+        "type": "other"
+    },
+    "Coconut Coffee Barleywine": {
+        "plot_color": "#AFC2C3",
+        "type": "other"
+    },
+    "Beerbo the Weirdo": {
+        "plot_color": "#000000",
+        "type": "stout"
+    },
+    "Nutter Buddy Coffee Stout": {
+        "plot_color": "#9D721B",
+        "type": "stout"
+    },
+    "Palante Irish Stout": {
+        "plot_color": "#2F230B",
+        "type": "stout"
+    },
+    "Cranberry Fluff": {
+        "plot_color": "#B92FAA",
+        "type": "sour"
+    },
+    "Red Dead Dorado Red IPA": {
+        "plot_color": "#B2523D",
+        "type": "ipa"
+    },
+    "Pineapple Mango Seltzer": {
+        "plot_color": "#D3CA20",
+        "type": "other"
+    },
+    "Cranberry Lemonade": {
+        "plot_color": "#C32EC1",
+        "type": "other"
+    },
+    "Puddin' Pop Stout": {
+        "plot_color": "#64412C",
+        "type": "stout"
+    },
+    "Zwickle": {
+        "plot_color": "#F3CB13",
+        "type": "lager"
+    }
+}

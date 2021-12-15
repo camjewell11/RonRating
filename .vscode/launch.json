@@ -17,6 +17,13 @@
             "request": "launch",
             "program": "Graph.py",
             "console": "integratedTerminal"
+        },
+        {
+            "name": "GUI",
+            "type": "python",
+            "request": "launch",
+            "program": "GUI.py",
+            "console": "integratedTerminal"
         }
     ]
 }
