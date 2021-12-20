@@ -26,3 +26,7 @@ def getBeerType(beers, beerName):
     for beer in beers:
         if beerName == beer:
             return beers[beer]["type"]
+
+beers = getBeerData()
+beerData = getBeersFromConfig()
+beersToGraph = getBeerColors(beerData)

@@ -1,34 +1,30 @@
-import copy, Graph, IO, sys
+import Graph, IO, Rate, sys
 
 from matplotlib.pyplot import hlines
 import matplotlib
 matplotlib.use('Qt5Agg')
 
 import PyQt5.QtWidgets as qw
-import PyQt5.QtCore as qc
 import PyQt5.QtGui as qg
-
-beers = IO.getBeerData()
-beerData = IO.getBeersFromConfig()
-beersToGraph = IO.getBeerColors(beerData)
+# import PyQt5.QtCore as qc
 
 def displayBeers():
-    if len(beerData) > 0:
+    if len(IO.beerData) > 0:
         ax = Graph.createRadar()
-        Graph.plotRadar(ax, beers, beersToGraph)
+        Graph.plotRadar(ax, IO.beers, IO.beersToGraph)
     else:
         print ("No beers to display.")
 
-class window(qw.QWidget):
+class displayWindow(qw.QWidget):
     def __init__(self, parent = None):
-        super(window, self).__init__(parent)
+        super(displayWindow, self).__init__(parent)
 
         self.mainVerticalLayout = qw.QVBoxLayout()
         self.resize(850,500)
         self.setWindowTitle("BeeZr Beers")
 
         self.label = qw.QLabel(self)
-        self.label.setText("Select beers to display")
+        self.label.setText("Select beers to display:")
         self.label.move(50,20)
         self.mainVerticalLayout.addWidget(self.label)
 
@@ -36,10 +32,19 @@ class window(qw.QWidget):
         self.createCheckBoxes()
         self.addColumnSpacers()
 
-        self.plotButton = qw.QPushButton("Plot")
-        self.mainVerticalLayout.addWidget(self.plotButton)
+        mainButtonsWidget = qw.QWidget()
+        mainButtonsLayout = qw.QHBoxLayout(mainButtonsWidget)
+
+        self.plotButton = qw.QPushButton("View Selected Beers")
+        mainButtonsLayout.addWidget(self.plotButton)
         self.plotButton.clicked.connect(displayBeers)
 
+        self.ratingWindow = None
+        self.rateButton = qw.QPushButton("Leave a Beer Rating")
+        mainButtonsLayout.addWidget(self.rateButton)
+        self.rateButton.clicked.connect(self.leaveARating)
+
+        self.mainVerticalLayout.addWidget(mainButtonsWidget)
         self.setLayout(self.mainVerticalLayout)
 
     def initializeBoxColumns(self):
@@ -145,24 +150,24 @@ class window(qw.QWidget):
     def createCheckBoxes(self):
         self.beerCheckBoxes = []
 
-        for beer in beers:
+        for beer in IO.beers:
             temp = qw.QCheckBox(beer)
             temp.setChecked(True)
             temp.stateChanged.connect(self.updateGraphsList)
-            temp.setStyleSheet("color: " + beerData[beer]["plot_color"])
+            temp.setStyleSheet("color: " + IO.beerData[beer]["plot_color"])
             self.beerCheckBoxes.append(temp)
 
-            if IO.getBeerType(beerData, beer) == "ipa":
+            if IO.getBeerType(IO.beerData, beer) == "ipa":
                 self.ipaLayout.addWidget(temp)
-            elif IO.getBeerType(beerData, beer) == "lager":
+            elif IO.getBeerType(IO.beerData, beer) == "lager":
                 self.lagerLayout.addWidget(temp)
-            elif IO.getBeerType(beerData, beer) == "ale":
+            elif IO.getBeerType(IO.beerData, beer) == "ale":
                 self.aleLayout.addWidget(temp)
-            elif IO.getBeerType(beerData, beer) == "stout":
+            elif IO.getBeerType(IO.beerData, beer) == "stout":
                 self.stoutLayout.addWidget(temp)
-            elif IO.getBeerType(beerData, beer) == "sour":
+            elif IO.getBeerType(IO.beerData, beer) == "sour":
                 self.sourLayout.addWidget(temp)
-            elif IO.getBeerType(beerData, beer) == "other":
+            elif IO.getBeerType(IO.beerData, beer) == "other":
                 self.otherLayout.addWidget(temp)
 
     def addColumnSpacers(self):
@@ -191,26 +196,30 @@ class window(qw.QWidget):
         for box in self.beerCheckBoxes:
             beerName = box.text()
             if not toggledOn and box.isChecked():
-                if beerName in beersToGraph.keys() and beerData[beerName]["type"] == beerType:
-                    beersToGraph.pop(beerName)
+                if beerName in IO.beersToGraph.keys() and IO.beerData[beerName]["type"] == beerType:
+                    IO.beersToGraph.pop(beerName)
                     box.setChecked(False)
-            elif toggledOn and not box.isChecked() and beerData[beerName]["type"] == beerType:
-                if beerName not in beersToGraph.keys():
-                    beersToGraph[beerName] = beerData[beerName]["plot_color"]
+            elif toggledOn and not box.isChecked() and IO.beerData[beerName]["type"] == beerType:
+                if beerName not in IO.beersToGraph.keys():
+                    IO.beersToGraph[beerName] = IO.beerData[beerName]["plot_color"]
                     box.setChecked(True)
 
     def updateGraphsList(self):
         for box in self.beerCheckBoxes:
             beerName = box.text()
             if not box.isChecked(): # just unchecked
-                if beerName in beersToGraph.keys():
-                    beersToGraph.pop(beerName)
+                if beerName in IO.beersToGraph.keys():
+                    IO.beersToGraph.pop(beerName)
             if box.isChecked(): # just checked
-                if beerName not in beersToGraph.keys():
-                    beersToGraph[beerName] = beerData[beerName]["plot_color"]
+                if beerName not in IO.beersToGraph.keys():
+                    IO.beersToGraph[beerName] = IO.beerData[beerName]["plot_color"]
+
+    def leaveARating(self):
+        self.ratingWindow = Rate.rateWindow()
+        self.ratingWindow.show()
 
 if __name__ == "__main__":
     app = qw.QApplication(sys.argv)
-    ex = window()
-    ex.show()
+    w = displayWindow()
+    w.show()
     sys.exit(app.exec_())

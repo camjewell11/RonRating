@@ -19,10 +19,17 @@
             "console": "integratedTerminal"
         },
         {
-            "name": "GUI",
+            "name": "Main GUI",
             "type": "python",
             "request": "launch",
             "program": "GUI.py",
+            "console": "integratedTerminal"
+        },
+        {
+            "name": "Rate Window",
+            "type": "python",
+            "request": "launch",
+            "program": "Rate.py",
             "console": "integratedTerminal"
         }
     ]

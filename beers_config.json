@@ -1,110 +1,137 @@
 {
     "Krisp Kringle\nWinter Lager": {
         "plot_color": "#05ACE5",
-        "type": "lager"
+        "type": "lager",
+        "description": ""
     },
     "Rootshoot Craft Lager": {
         "plot_color": "#5E4626",
-        "type": "lager"
+        "type": "lager",
+        "description": ""
     },
     "Sanity Czech": {
         "plot_color": "#E3C80F",
-        "type": "lager"
+        "type": "lager",
+        "description": ""
     },
     "Deception Dark Lager": {
         "plot_color": "#251C0C",
-        "type": "lager"
+        "type": "lager",
+        "description": ""
     },
     "Intimidator Dopplebock": {
         "plot_color": "#946A1D",
-        "type": "lager"
+        "type": "lager",
+        "description": ""
     },
     "Kickboxer American Red Ale": {
         "plot_color": "#CE2E14",
-        "type": "ale"
+        "type": "ale",
+        "description": ""
     },
     "Moonshot Coffee Stout": {
         "plot_color": "#251310",
-        "type": "stout"
+        "type": "stout",
+        "description": ""
     },
     "Strata Crusher": {
         "plot_color": "#81D71C",
-        "type": "ipa"
+        "type": "ipa",
+        "description": ""
     },
     "Hash in the Mash": {
         "plot_color": "#A8D71C",
-        "type": "ipa"
+        "type": "ipa",
+        "description": ""
     },
     "Fresh Sesh Pale Ale": {
         "plot_color": "#33DBE0",
-        "type": "ipa"
+        "type": "ipa",
+        "description": ""
     },
     "Huntschill Cold IPA": {
         "plot_color": "#0AEBF2",
-        "type": "ipa"
+        "type": "ipa",
+        "description": ""
     },
     "Danktification Brett IPA": {
         "plot_color": "#2C8B32",
-        "type": "ipa"
+        "type": "ipa",
+        "description": ""
     },
     "Brett Pale Ale": {
         "plot_color": "#208241",
-        "type": "other"
+        "type": "other",
+        "description": ""
     },
     "Imperial Brett IPA": {
         "plot_color": "#208260",
-        "type": "ipa"
+        "type": "ipa",
+        "description": ""
     },
     "Captain Insano": {
         "plot_color": "#BA7410",
-        "type": "other"
+        "type": "other",
+        "description": ""
     },
     "French Calvados Apple\nBrandy BA Belgian\nDark Strong": {
         "plot_color": "#32EB0B",
-        "type": "other"
+        "type": "other",
+        "description": ""
     },
     "Cabernet Sauvignon Aged\nCandi Belgian Tripel": {
         "plot_color": "#9B1349",
-        "type": "other"
+        "type": "other",
+        "description": ""
     },
     "Coconut Coffee Barleywine": {
         "plot_color": "#AFC2C3",
-        "type": "other"
+        "type": "other",
+        "description": ""
     },
     "Beerbo the Weirdo": {
         "plot_color": "#000000",
-        "type": "stout"
+        "type": "stout",
+        "description": ""
     },
     "Nutter Buddy Coffee Stout": {
         "plot_color": "#9D721B",
-        "type": "stout"
+        "type": "stout",
+        "description": ""
     },
     "Palante Irish Stout": {
         "plot_color": "#2F230B",
-        "type": "stout"
+        "type": "stout",
+        "description": ""
     },
     "Cranberry Fluff": {
         "plot_color": "#B92FAA",
-        "type": "sour"
+        "type": "sour",
+        "description": ""
     },
     "Red Dead Dorado Red IPA": {
         "plot_color": "#B2523D",
-        "type": "ipa"
+        "type": "ipa",
+        "description": ""
     },
     "Pineapple Mango Seltzer": {
         "plot_color": "#D3CA20",
-        "type": "other"
+        "type": "other",
+        "description": ""
     },
     "Cranberry Lemonade": {
         "plot_color": "#C32EC1",
-        "type": "other"
+        "type": "other",
+        "description": ""
     },
     "Puddin' Pop Stout": {
         "plot_color": "#64412C",
-        "type": "stout"
+        "type": "stout",
+        "description": ""
     },
     "Zwickle": {
         "plot_color": "#F3CB13",
-        "type": "lager"
+        "type": "lager",
+        "description": ""
     }
 }

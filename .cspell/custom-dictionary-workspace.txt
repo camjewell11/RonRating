@@ -13,6 +13,7 @@ Krisp
 Palante
 Puddin
 pyplot
+pyqt
 rlabel
 Rootshoot
 Sauvignon
