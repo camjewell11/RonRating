@@ -21,21 +21,21 @@ def initializeDBConnection():
 
     return myDB, cursor
 
-def writeDataToDB(myDB, cursor, ID, name, type, abv, rating):
-    query = ("INSERT INTO beerList (ID, `Beer Name`, `Beer Type`, ABV, Rating) "
+def writeBeerToList(myDB, cursor, table, ID, name, type, abv, rating):
+    query = ("INSERT INTO " + table + " (ID, `Beer Name`, `Beer Type`, ABV, Rating) "
             "VALUES (%s, %s, %s, %s, %s);")
     values = (ID, name, type, abv, rating)
     cursor.execute(query, values)
     myDB.commit()
 
-def readAllDataFromDB(cursor, ):
-    query = "SELECT * FROM beerlist;"
+def readAllDataFromDB(cursor, table):
+    query = "SELECT * FROM " + table
     cursor.execute(query)
     result = cursor.fetchall()
     return result
 
-def readColDataFromDB(cursor, col, value):
-    query = "SELECT * FROM beerlist WHERE " + str(col) + "=" + str(value)
+def readColDataFromDB(cursor, table, col, value):
+    query = "SELECT * FROM " + table + " WHERE " + str(col) + "=" + str(value)
     cursor.execute(query)
     result = cursor.fetchall()
     return result
@@ -72,7 +72,7 @@ if __name__=="__main__":
     useDatabase(myDB, cursor, "BeerRatings")
     # addColumnToTable(myDB, cursor, "BeerList", "Beer Name", config.stringType)
     # addColumnToTable(myDB, cursor, "BeerList", "Rating", config.doubleType)
-    # writeDataToDB(myDB, cursor, 2, "Moonshot", "Stout", 10, 9)
-    # readAllDataFromDB(myDB, cursor, )
-    # readColDataFromDB(myDB, cursor, 'ID', 2)
+    # writeBeerToList(myDB, cursor, "BeerList", 2, "Moonshot", "Stout", 10, 9)
+    # readAllDataFromDB(myDB, cursor, "BeerList")
+    # readColDataFromDB(myDB, cursor, "BeerList", 'ID', 2)
     wrapUp(myDB, cursor)

@@ -1,4 +1,4 @@
-import Graph, IO, Rate, sys
+import Database, Graph, IO, Rate, sys
 
 from matplotlib.pyplot import hlines
 import matplotlib
