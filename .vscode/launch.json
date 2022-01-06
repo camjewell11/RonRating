@@ -5,6 +5,13 @@
     "version": "0.2.0",
     "configurations": [
         {
+            "name": "Database",
+            "type": "python",
+            "request": "launch",
+            "program": "Database.py",
+            "console": "integratedTerminal"
+        },
+        {
             "name": "Ratings Program",
             "type": "python",
             "request": "launch",
@@ -19,7 +26,7 @@
             "console": "integratedTerminal"
         },
         {
-            "name": "Main GUI",
+            "name": "GUI",
             "type": "python",
             "request": "launch",
             "program": "GUI.py",
