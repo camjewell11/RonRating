@@ -28,6 +28,13 @@ def writeBeerToList(myDB, cursor, table, ID, name, type, abv, rating):
     cursor.execute(query, values)
     myDB.commit()
 
+def writeBeerDataToDB(myDB, cursor, table, name, type, description, plot_color, sweet, bitter, strength, body, heady):
+    query = ("INSERT INTO " + table + " (`Beer Name`, `Beer Type`, Description, Color, Sweetness, Bitterness, Strength, Body, Head) "
+            "VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s);")
+    values = (name, type, description, plot_color, sweet, bitter, strength, body, heady)
+    cursor.execute(query, values)
+    myDB.commit()
+
 def readAllDataFromDB(cursor, table):
     query = "SELECT * FROM " + table
     cursor.execute(query)
